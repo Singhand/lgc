@@ -47,16 +47,15 @@ const TextArea = styled.textarea`
   }
   &:focus {
     outline: none;
-    border-color: #1d9bf0;
+    border-color: #ffffff;
   }
 `;
 
 const AttachFileButton = styled.label`
   padding: 10px 0px;
-  color: #1d9bf0;
   text-align: center;
   border-radius: 20px;
-  border: 1px solid #1d9bf0;
+  border: 1px solid white;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -67,8 +66,6 @@ const AttachFileInput = styled.input`
 `;
 
 const SubmitBtn = styled.input`
-  background-color: #1d9bf0;
-  color: white;
   border: none;
   padding: 10px 0px;
   border-radius: 20px;
@@ -158,11 +155,11 @@ export default function EditTweet({
             maxLength={180}
             onChange={onChange}
             value={tweetNew}
-            placeholder="What is happening?!"
+            placeholder="메시지 입력"
           />
           {!fileForEdit && <Photo src={photo} />}
           <AttachFileButton htmlFor="fileEdit">
-            {fileForEdit ? "Photo added ✅" : "Change photo"}
+            {fileForEdit ? "완료 ✅" : "사진 변경"}
           </AttachFileButton>
           <AttachFileInput
             onChange={onFileChange}
@@ -170,16 +167,13 @@ export default function EditTweet({
             id="fileEdit"
             accept="image/*"
           />
-          <SubmitBtn
-            type="submit"
-            value={isLoading ? "Editting..." : "Edit Tweet"}
-          />
+          <SubmitBtn type="submit" value={isLoading ? "진행중..." : "수정"} />
           <CloseBtn
             onClick={() => {
               show(false);
             }}
           >
-            Close
+            닫기
           </CloseBtn>
         </Form>
       </Container>

@@ -33,7 +33,7 @@ const Input = styled.input`
   font-size: 16px;
   &[type="submit"] {
     cursor: pointer;
-    background-color: #3995e7;
+    background-color: #7dcf25;
     &:hover {
       opacity: 0.9;
     }
@@ -97,7 +97,7 @@ export default function CreateAccount() {
   return (
     <>
       <Wrapper>
-        <Title>Join 𝕏</Title>
+        <Title>회원가입</Title>
         <Form onSubmit={onSubmit}>
           <Input
             onChange={onChange}

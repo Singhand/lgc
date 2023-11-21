@@ -34,7 +34,7 @@ const Input = styled.input`
   font-size: 16px;
   &[type="submit"] {
     cursor: pointer;
-    background-color: #3995e7;
+    background-color: #bbe53d;
     &:hover {
       opacity: 0.8;
     }
@@ -49,9 +49,6 @@ const Error = styled.span`
 
 const Switcher = styled.span`
   margin-top: 20px;
-  a {
-    color: skyblue;
-  }
 `;
 
 export default function Login() {
@@ -100,7 +97,7 @@ export default function Login() {
   return (
     <>
       <Wrapper>
-        <Title>Log into 𝕏</Title>
+        <Title>로또 번호별 그룹채팅</Title>
         <Form onSubmit={onSubmit}>
           <Input
             onChange={onChange}

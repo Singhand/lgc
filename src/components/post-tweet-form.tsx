@@ -33,10 +33,9 @@ const TextArea = styled.textarea`
 
 const AttachFileButton = styled.label`
   padding: 10px 0px;
-  color: #1d9bf0;
   text-align: center;
   border-radius: 20px;
-  border: 1px solid #1d9bf0;
+  border: 1px solid #c4c4c4;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -47,7 +46,7 @@ const AttachFileInput = styled.input`
 `;
 
 const SubmitBtn = styled.input`
-  background-color: #1d9bf0;
+  background-color: #a1bf09;
   color: white;
   border: none;
   padding: 10px 0px;
@@ -116,10 +115,10 @@ export default function PostTweetForm() {
         maxLength={180}
         onChange={onChange}
         value={tweet}
-        placeholder="What is happening?!"
+        placeholder="메시지 입력"
       />
       <AttachFileButton htmlFor="file">
-        {file ? "Photo added ✅" : "Add photo"}
+        {file ? "완료" : "사진 추가"}
       </AttachFileButton>
       <AttachFileInput
         onChange={onFileChange}
@@ -127,10 +126,7 @@ export default function PostTweetForm() {
         id="file"
         accept="image/*"
       />
-      <SubmitBtn
-        type="submit"
-        value={isLoading ? "Posting..." : "Post Tweet"}
-      />
+      <SubmitBtn type="submit" value={isLoading ? "작성중..." : "작성"} />
     </Form>
   );
 }

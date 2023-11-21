@@ -13,7 +13,7 @@ const Button = styled.span`
   border-radius: 50px;
   border: 0;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
