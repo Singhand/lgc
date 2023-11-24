@@ -8,12 +8,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC1da9kzRgMuVWe59E0psND1FRIHuqT-JY",
-  authDomain: "nwitter-reloaded-2f6a4.firebaseapp.com",
-  projectId: "nwitter-reloaded-2f6a4",
-  storageBucket: "nwitter-reloaded-2f6a4.appspot.com",
-  messagingSenderId: "1074231207185",
-  appId: "1:1074231207185:web:201c83683cbecff24118b0",
+  apiKey: "AIzaSyDZjeF_DfLFCNAobUP2Ck7tTw_2rZjrcMY",
+  authDomain: "lotto-group-chat.firebaseapp.com",
+  projectId: "lotto-group-chat",
+  storageBucket: "lotto-group-chat.appspot.com",
+  messagingSenderId: "924696504449",
+  appId: "1:924696504449:web:9cbf59c413eb31bd400580",
 };
 
 // Initialize Firebase

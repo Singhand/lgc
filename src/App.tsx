@@ -1,42 +1,14 @@
+import { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/layout";
-import Home from "./routes/home";
-import Profile from "./routes/profile";
-import Login from "./routes/login";
-import CreateAccount from "./routes/create-account";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { useEffect, useState } from "react";
-import LoadingScreen from "./components/loading-screen";
-import { auth } from "./firebase";
-import ProtectedRoute from "./components/protected-route";
+import "./App.css";
+import Main from "./routes/Main";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <ProtectedRoute>
-        <Layout />
-      </ProtectedRoute>
-    ),
-    children: [
-      {
-        path: "",
-        element: <Home></Home>,
-      },
-      {
-        path: "profile",
-        element: <Profile></Profile>,
-      },
-    ],
-  },
-  {
-    path: "/login",
-    element: <Login></Login>,
-  },
-  {
-    path: "create-account",
-    element: <CreateAccount></CreateAccount>,
+    element: <Main></Main>,
   },
 ]);
 
@@ -46,10 +18,7 @@ ${reset};
   box-sizing: border-box;
 }
 body{
-  background-color:black;
-  color:white;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  background-color:#f0f0f0;
 }
 `;
 
@@ -63,8 +32,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const init = async () => {
-    await auth.authStateReady();
-    console.log("loaded");
     setIsLoading(false);
   };
 
@@ -74,11 +41,7 @@ function App() {
   return (
     <Wrapper>
       <GlobalStyles></GlobalStyles>
-      {isLoading ? (
-        <LoadingScreen></LoadingScreen>
-      ) : (
-        <RouterProvider router={router} />
-      )}
+      {isLoading ? <></> : <RouterProvider router={router} />}
     </Wrapper>
   );
 }
