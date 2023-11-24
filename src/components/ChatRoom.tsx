@@ -138,8 +138,8 @@ export default function ChatRoom({
 
       // 스냅샷 리스너 체인지
       const fetch = async () => {
-        console.log("try to connect to", rooms[idx].join("a"));
-        const chatsQuery = query(collection(db, rooms[idx].join("a")));
+        console.log("try to connect to", newRoomInfo);
+        const chatsQuery = query(collection(db, "rooms", newRoomInfo, "chats"));
         unsubscribe = onSnapshot(chatsQuery, (snapshot) => {
           console.log("snapshot called");
           const nd = snapshot.docs.map((doc) => {
@@ -185,8 +185,9 @@ export default function ChatRoom({
         handleEnter(input, set);
       }
     },
-    [rooms, idx]
+    []
   );
+
   const handleEnter = useCallback(
     async (
       input: string,
@@ -196,18 +197,24 @@ export default function ChatRoom({
         set("");
 
         // data add
-        console.log("data add to", rooms[idx]);
-        let docRef = doc(db, rooms[idx].join("a"), `${new Date().getTime()}`);
+        console.log("data add to", roomInfo);
+        let docRef = doc(
+          db,
+          "rooms",
+          roomInfo || "limbo",
+          "chats",
+          `${new Date().getTime()}`
+        );
 
         await setDoc(docRef, {
           content: input,
         });
       }
     },
-    [rooms, idx]
+    [roomInfo]
   );
 
-  const hc = useCallback(
+  const inputChange = useCallback(
     (event: { target: { value: React.SetStateAction<string> } }) => {
       setInputValue(event.target.value);
     },
@@ -295,7 +302,7 @@ export default function ChatRoom({
             <Ci
               type="text"
               value={inputValue}
-              onChange={hc}
+              onChange={inputChange}
               onKeyDown={(e) => {
                 handleKeyPress(e, inputValue, setInputValue);
               }}

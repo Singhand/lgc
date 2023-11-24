@@ -88,7 +88,6 @@ const NumberForm = ({
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    // Validate that all values are unique and between 1 and 45
     const uniqueValues = new Set(values);
     if (values.length !== uniqueValues.size) {
       alert("중복되지 않는 숫자를 입력하세요");
@@ -104,11 +103,11 @@ const NumberForm = ({
       return;
     }
 
-    // Handle form submission logic here
     let arr = sortInputs();
     console.log("Submitted values:", arr.join(", "));
 
     for (let i = 0; i < rooms.length; i++) {
+      // 이미 같은 번호가 존재하는지 체크
       if (JSON.stringify(rooms[i]) == JSON.stringify(arr)) {
         console.log("find existing room");
         setIndex(i);
