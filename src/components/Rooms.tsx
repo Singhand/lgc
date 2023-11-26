@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import TitleBalls from "./TitleBalls";
 import { Button, Close } from "./Buttons";
@@ -69,15 +68,13 @@ const Room = styled.div`
 
 export default function Rooms({
   rooms,
-  idx,
-  setRooms,
   setIndex,
   showMenu,
   setShowMenu,
 }: {
   rooms: number[][];
-  idx: number;
-  setRooms: any;
+  idx?: number;
+  setRooms?: any;
   setIndex: any;
   showMenu: boolean;
   setShowMenu: any;

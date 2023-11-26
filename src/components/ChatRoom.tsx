@@ -1,19 +1,11 @@
+import { Unsubscribe } from "firebase/auth";
+import { collection, doc, onSnapshot, query, setDoc } from "firebase/firestore";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import TitleBalls from "./TitleBalls";
+import { db } from "../firebase";
 import { Button, Close, Nonclose } from "./Buttons";
 import NumberForm from "./NumberForm";
-import { Unsubscribe } from "firebase/auth";
-import {
-  collection,
-  limit,
-  onSnapshot,
-  orderBy,
-  doc,
-  setDoc,
-  query,
-} from "firebase/firestore";
-import { db } from "../firebase";
+import TitleBalls from "./TitleBalls";
 
 const Wrap = styled.div`
   display: flex;

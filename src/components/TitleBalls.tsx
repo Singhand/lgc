@@ -49,7 +49,7 @@ const getColorClass = (number: number) => {
   } else if (number >= 41 && number <= 45) {
     return "green";
   }
-  return ""; // Default color
+  return "";
 };
 
 export default function TitleBalls({ numbers }: { numbers: any }) {
