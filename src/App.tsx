@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Suspense, lazy, useEffect, useState } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import "./App.css";
-import Main from "./routes/Main";
+
+const Main = lazy(() => import("./routes/Main"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Main />
+      </Suspense>
+    ),
   },
 ]);
 
