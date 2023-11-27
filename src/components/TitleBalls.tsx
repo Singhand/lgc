@@ -52,7 +52,7 @@ const getColorClass = (number: number) => {
   return "";
 };
 
-export default function TitleBalls({ numbers }: { numbers: any }) {
+export default function TitleBalls({ numbers }: { numbers: number[] }) {
   return (
     <Wrap>
       {numbers.map((number: number, index: React.Key | null) => (
