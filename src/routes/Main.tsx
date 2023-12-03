@@ -7,7 +7,7 @@ import DrawInfo from "../components/DrawInfo";
 const Wrapper = styled.div`
   width: 100%;
   max-width: 900px;
-  padding-top: 50px;
+  padding-top: 25px;
   gap: 20px;
   display: flex;
   flex-direction: column;
