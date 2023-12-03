@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { WhiteBtn } from "./Buttons";
 import TitleBalls from "./TitleBalls";
@@ -113,7 +113,7 @@ export default function DrawInfo() {
       {showBtn1 && <WhiteBtn onClick={openDh}>구매하러 가기</WhiteBtn>}
       {showBtn2 && (
         <WhiteBtn onClick={openLive}>
-          <Red>●</Red>라이브 가기
+          <Red>●</Red>라이브 보러가기
         </WhiteBtn>
       )}
       {numbers && <TitleBalls numbers={numbers}></TitleBalls>}
