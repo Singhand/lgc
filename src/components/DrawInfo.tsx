@@ -5,6 +5,7 @@ import TitleBalls from "./TitleBalls";
 
 const Wrap = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 10px;

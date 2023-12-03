@@ -21,6 +21,10 @@ const Title = styled.div`
 
 const T2 = styled(Title)`
   font-size: 20px;
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const Grid = styled.div`
