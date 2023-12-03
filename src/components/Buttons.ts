@@ -29,3 +29,18 @@ export const Close = styled(Button)`
 export const Nonclose = styled(Close)`
   display: flex;
 `;
+
+export const WhiteBtn = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 20px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ChatRoom from "../components/ChatRoom";
 import Rooms from "../components/Rooms";
+import DrawInfo from "../components/DrawInfo";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -50,6 +51,7 @@ export default function Main() {
     <Wrapper>
       <Title>로또 번호별 그룹채팅</Title>
       <T2>같은 번호를 산 사람들과 대화해 보세요</T2>
+      <DrawInfo></DrawInfo>
       <Grid>
         <Rooms
           rooms={rooms}
