@@ -96,8 +96,8 @@ const Ci = styled.input`
   }
 `;
 
-let roomInfo: string | undefined = undefined;
-let unsubscribe: Unsubscribe | null = null;
+var roomInfo: string | undefined = undefined;
+var unsubscribe: Unsubscribe | null = null;
 
 export default function ChatRoom({
   rooms,
