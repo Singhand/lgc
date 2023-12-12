@@ -1,10 +1,11 @@
 # 소개
 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+
 **같은 로또 번호를 산 사람들과 대화해 보세요**
 
 [https://lotto-group-chat.web.app/](https://lotto-group-chat.web.app/)
-
-[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1702390150250?alt=media&token=0decadcd-ec85-4294-b5a5-be4dcf58842b)](https://github.com/msdio/stackticon)
 
 # 구현 화면
 
