@@ -1,27 +1,45 @@
-# React + TypeScript + Vite
+# 소개
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**같은 로또 번호를 산 사람들과 대화해 보세요**
 
-Currently, two official plugins are available:
+[https://lotto-group-chat.web.app/](https://lotto-group-chat.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1702390150250?alt=media&token=0decadcd-ec85-4294-b5a5-be4dcf58842b)](https://github.com/msdio/stackticon)
 
-## Expanding the ESLint configuration
+# 구현 화면
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![초기 화면이다. 상단에 다음 추첨 시간과 사이트 링크가 표시된다. 채팅방에 입장하기 위해서 사용자는 자신이 구매한 6개의 번호를 입력한다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/%25EC%25BA%25A1%25EC%25B2%2598_2023_12_03_17_30_04_245.png)
 
-- Configure the top-level `parserOptions` property like this:
+초기 화면이다. 상단에 다음 추첨 시간과 사이트 링크가 표시된다. 채팅방에 입장하기 위해서 사용자는 자신이 구매한 6개의 번호를 입력한다.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+![방에 입장하면 채팅창과 입력창이 나타난다. 채팅은 기본적으로 익명이다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/%25EC%25BA%25A1%25EC%25B2%2598_2023_12_03_17_32_04_586.png)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+방에 입장하면 채팅창과 입력창이 나타난다. 채팅은 기본적으로 익명이다.
+
+![화면 우측 상단에 나가기 버튼을 통해 채팅방을 목록에서 삭제할 수 있다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/%25EC%25BA%25A1%25EC%25B2%2598_2023_12_03_17_32_33_128.png)
+
+화면 우측 상단에 나가기 버튼을 통해 채팅방을 목록에서 삭제할 수 있다.
+
+![새 그룹을 추가할 수도 있다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/%25EC%25BA%25A1%25EC%25B2%2598_2023_12_03_17_33_04_90.png)
+
+새 그룹을 추가할 수도 있다.
+
+![그룹 목록에서 번호를 클릭하면 해당 방으로 이동할 수 있다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/%25EC%25BA%25A1%25EC%25B2%2598_2023_12_03_17_33_09_144.png)
+
+그룹 목록에서 번호를 클릭하면 해당 방으로 이동할 수 있다.
+
+![현재 추첨중일 경우 라이브 링크가 표시된다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/Untitled.png)
+
+현재 추첨중일 경우 라이브 링크가 표시된다.
+
+![추첨 당일 9시부터 자정까지 당첨 번호가 표시된다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/Untitled%201.png)
+
+추첨 당일 9시부터 자정까지 당첨 번호가 표시된다.
+
+![모바일에서도 사용할 수 있도록 반응형 웹으로 구현하였다. 그룹창이 사라지고 메뉴 버튼이 나타났다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/%25EC%25BA%25A1%25EC%25B2%2598_2023_12_03_17_51_02_46.png)
+
+모바일에서도 사용할 수 있도록 반응형 웹으로 구현하였다. 그룹창이 사라지고 메뉴 버튼이 나타났다.
+
+![메뉴 버튼을 클릭하면 그룹창을 보이게 할 수 있다.](./example/%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%5B%E1%84%85%E1%85%A9%E1%84%84%E1%85%A9%20%E1%84%87%E1%85%A5%E1%86%AB%E1%84%92%E1%85%A9%E1%84%87%E1%85%A7%E1%86%AF%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%E1%84%8E%E1%85%A2%E1%84%90%E1%85%B5%E1%86%BC%5D%20a15ba519d3ca4799ac24bfb6b3bba202/%25EC%25BA%25A1%25EC%25B2%2598_2023_12_03_17_51_06_837.png)
+
+메뉴 버튼을 클릭하면 그룹창을 보이게 할 수 있다.
