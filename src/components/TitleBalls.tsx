@@ -7,7 +7,7 @@ const Wrap = styled.div`
   justify-content: center;
 `;
 
-const Ball = styled.div`
+const Ball = styled.div<{ $num: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,43 +20,26 @@ const Ball = styled.div`
   color: white;
 
   ${(props) => {
-    switch (props.color) {
-      case "yellow":
-        return "background-color: #ecc33c;";
-      case "blue":
-        return "background-color: #5085e8;";
-      case "red":
-        return "background-color: #e32b2b;";
-      case "gray":
-        return "background-color: gray;";
-      case "green":
-        return "background-color: #31cc31;";
-      default:
-        return "";
+    if (props.$num >= 1 && props.$num <= 10) {
+      return "background-color: #ecc33c;";
+    } else if (props.$num >= 11 && props.$num <= 20) {
+      return "background-color: #5085e8;";
+    } else if (props.$num >= 21 && props.$num <= 30) {
+      return "background-color: #e32b2b;";
+    } else if (props.$num >= 31 && props.$num <= 40) {
+      return "background-color: gray;";
+    } else if (props.$num >= 41 && props.$num <= 45) {
+      return "background-color: #31cc31;";
     }
+    return "";
   }}
 `;
-
-const getColorClass = (number: number) => {
-  if (number >= 1 && number <= 10) {
-    return "yellow";
-  } else if (number >= 11 && number <= 20) {
-    return "blue";
-  } else if (number >= 21 && number <= 30) {
-    return "red";
-  } else if (number >= 31 && number <= 40) {
-    return "gray";
-  } else if (number >= 41 && number <= 45) {
-    return "green";
-  }
-  return "";
-};
 
 export default function TitleBalls({ numbers }: { numbers: number[] }) {
   return (
     <Wrap>
       {numbers.map((number: number, index: React.Key | null) => (
-        <Ball key={index} color={getColorClass(number)}>
+        <Ball key={index} $num={number}>
           {number}
         </Ball>
       ))}
