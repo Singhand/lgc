@@ -99,6 +99,10 @@ const Ci = styled.input`
 var roomInfo: string | undefined = undefined;
 var unsubscribe: Unsubscribe | null = null;
 
+interface IChat {
+  content: string;
+}
+
 export default function ChatRoom({
   rooms,
   idx,
@@ -108,14 +112,14 @@ export default function ChatRoom({
 }: {
   rooms: number[][];
   idx: number;
-  setRooms: any;
-  setIndex: any;
-  setShowMenu: any;
+  setRooms: React.Dispatch<React.SetStateAction<number[][]>>;
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
+  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const chatContainerRef = useRef<HTMLDivElement | null>(null);
 
   const [inputValue, setInputValue] = useState("");
-  const [chats, setChats] = useState<any[]>([]);
+  const [chats, setChats] = useState<IChat[]>([]);
 
   useEffect(() => {
     let newRoomInfo = JSON.stringify(rooms[idx]);
@@ -134,7 +138,7 @@ export default function ChatRoom({
         const chatsQuery = query(collection(db, "rooms", newRoomInfo, "chats"));
         unsubscribe = onSnapshot(chatsQuery, (snapshot) => {
           console.log("snapshot called");
-          const nd = snapshot.docs.map((doc) => {
+          const nd: IChat[] = snapshot.docs.map((doc) => {
             const { content } = doc.data();
             return {
               content,

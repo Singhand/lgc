@@ -57,12 +57,12 @@ const NumberForm = ({
   setRooms,
   setIndex,
 }: {
-  rooms: any;
-  setRooms: any;
-  setIndex: any;
+  rooms: number[][];
+  setRooms: React.Dispatch<React.SetStateAction<number[][]>>;
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const [values, setValues] = useState(["", "", "", "", "", ""]);
-  const inputRefs = useRef<any[]>([]);
+  const inputRefs = useRef<HTMLInputElement[]>([]);
 
   const handleInputChange = (
     index: number,
@@ -73,6 +73,7 @@ const NumberForm = ({
     newValues[index] = value.slice(0, 2); // Allow up to 2 digits
     setValues(newValues);
 
+    console.log(inputRefs);
     // If two digits are entered, focus on the next input
     if (value.length === 2 && index < values.length - 1) {
       inputRefs.current[index + 1].focus();
@@ -132,7 +133,7 @@ const NumberForm = ({
           type="number"
           value={value}
           onChange={(event) => handleInputChange(index, event)}
-          ref={(el) => (inputRefs.current[index] = el)}
+          ref={(el: HTMLInputElement) => (inputRefs.current[index] = el)}
           max="45"
           min="1"
           required

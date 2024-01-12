@@ -65,7 +65,9 @@ export default function DrawInfo() {
       offset.setDate(offset.getDate() + 7);
     }
 
-    let res = await fetch(`/api/common.do?method=getLottoNumber&drwNo=${no}`);
+    let res = await fetch(
+      `https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=${no}`
+    );
     let rj = await res.json();
     if (rj["returnValue"] == "success") {
       let balls = [];

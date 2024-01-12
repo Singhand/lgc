@@ -74,10 +74,10 @@ export default function Rooms({
 }: {
   rooms: number[][];
   idx?: number;
-  setRooms?: any;
-  setIndex: any;
+  setRooms?: React.Dispatch<React.SetStateAction<number[][]>>;
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
   showMenu: boolean;
-  setShowMenu: any;
+  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
     <Wrap show={showMenu}>

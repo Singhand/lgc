@@ -41,9 +41,9 @@ const Grid = styled.div`
   }
 `;
 export default function Main() {
-  const [rooms, setRooms] = useState([]);
-  const [index, setIndex] = useState(-1);
-  const [showMenu, setShowMenu] = useState(false);
+  const [rooms, setRooms] = useState<number[][]>([]);
+  const [index, setIndex] = useState<number>(-1);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
   console.log(rooms, index);
   useEffect(() => {
     let data = localStorage.getItem("rooms");
