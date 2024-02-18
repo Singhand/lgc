@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
 const Form = styled.form`
@@ -63,6 +63,10 @@ const NumberForm = ({
 }) => {
   const [values, setValues] = useState(["", "", "", "", "", ""]);
   const inputRefs = useRef<HTMLInputElement[]>([]);
+
+  useEffect(() => {
+    inputRefs.current[0].focus();
+  }, []);
 
   const handleInputChange = (
     index: number,
